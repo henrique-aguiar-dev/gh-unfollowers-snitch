@@ -3,10 +3,12 @@ Github (Un)followers Snitch 1.2
 ****************************************
 
 #######################
+
 Updated dependencies ------ 03/22/2023
+
 #######################
 
-URL (pending)
+URL: https://githubsnitch.b4a.app/
 
 Reveal who don't folow you back on GitHub.
 

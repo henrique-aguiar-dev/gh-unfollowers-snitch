@@ -1,8 +1,9 @@
-FROM node:18
-ENV NODE_ENV development
-WORKDIR /src
-COPY package.json /src/
+FROM node:18-alpine
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json ./
+COPY package-lock.json ./
 RUN npm install
-COPY . .
+COPY . ./
 EXPOSE 3000
 CMD ["npm", "start"]

@@ -1,6 +1,7 @@
 node_modules
 npm-debug.log
 build
-.git
-*.md
-.gitignore
+.dockerignore
+**/.git
+**/.DS_Store
+**/node_modules

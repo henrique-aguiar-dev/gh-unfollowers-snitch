@@ -7,8 +7,6 @@ WORKDIR /src
 # Copy the application files into the working directory
 COPY . /
 
-EXPOSE 3000
-
 # Install the application dependencies
 RUN npm install
 

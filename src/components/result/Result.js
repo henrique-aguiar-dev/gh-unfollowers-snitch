@@ -3,6 +3,7 @@ import {
 	Routes,
 	Route,
 	Link,
+	useNavigate,
 } from "react-router-dom";
 
 import getFollowersData from '../../services/GetFollowers';
@@ -21,8 +22,11 @@ const Result = () => {
 	const [dataLoaded, setDataLoaded] = useState(false);
 	const [userName, setUserName] = useState(null);
 	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate();
 	
 	useEffect(() => {
+		if (!userName) navigate('../', { replace: true });
+
 		const getData = async () => {
 			setLoading(true);
 
@@ -44,10 +48,8 @@ const Result = () => {
 		}
 
 		if (userName && !dataLoaded) getData();
-	}, [userName, dataLoaded]);
-
-	//useEffect(() => [loading, errors])
-
+	}, [userName, dataLoaded, navigate]);
+	
 	const handleFormSubmit = (() => {
 		const errArr = []
 		const formValue = inputText.current.value;
@@ -92,7 +94,7 @@ const Result = () => {
 					<div className="list-container">
 						<Routes>
 							<Route
-								exact path="/dontfollow"
+								path="/dontfollow"
 								element={
 									<>
 										<h3>Don't follow back:</h3>
@@ -101,7 +103,7 @@ const Result = () => {
 								}
 							></Route>
 							<Route
-								exact path="/following"
+								path="/following"
 								element={
 									<>
 										<h3>Following:</h3>
@@ -110,7 +112,7 @@ const Result = () => {
 								}
 							></Route>
 							<Route
-								exact path="/followers"
+								path="/followers"
 								element={
 									<>
 										<h3>Followers:</h3>
@@ -119,7 +121,7 @@ const Result = () => {
 								}
 							></Route>
 							<Route
-								exact path="/mutual"
+								path="/mutual"
 								element={
 									<>
 										<h3>Mutual followers:</h3>

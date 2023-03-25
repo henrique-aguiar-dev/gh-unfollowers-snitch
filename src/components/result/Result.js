@@ -92,7 +92,7 @@ const Result = () => {
 					<div className="list-container">
 						<Routes>
 							<Route
-								path="/dontfollow"
+								exact path="/dontfollow"
 								element={
 									<>
 										<h3>Don't follow back:</h3>
@@ -101,7 +101,7 @@ const Result = () => {
 								}
 							></Route>
 							<Route
-								path="/following"
+								exact path="/following"
 								element={
 									<>
 										<h3>Following:</h3>
@@ -110,7 +110,7 @@ const Result = () => {
 								}
 							></Route>
 							<Route
-								path="/followers"
+								exact path="/followers"
 								element={
 									<>
 										<h3>Followers:</h3>
@@ -119,7 +119,7 @@ const Result = () => {
 								}
 							></Route>
 							<Route
-								path="/mutual"
+								exact path="/mutual"
 								element={
 									<>
 										<h3>Mutual followers:</h3>

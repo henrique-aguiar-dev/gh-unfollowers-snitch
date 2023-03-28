@@ -1,8 +1,8 @@
 FROM node:18
-WORKDIR /src
-COPY package.json /src/
-COPY package-lock.json /src/
-COPY . .
+WORKDIR /
+COPY package.json /
+COPY package-lock.json /
+COPY . /
 RUN npm install
 RUN npm run build
 EXPOSE 3000

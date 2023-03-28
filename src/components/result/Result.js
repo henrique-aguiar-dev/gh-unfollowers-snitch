@@ -25,7 +25,7 @@ const Result = () => {
 	const navigate = useNavigate();
 	
 	useEffect(() => {
-		if (!userName) navigate('../', { replace: true });
+		
 
 		const getData = async () => {
 			setLoading(true);
@@ -50,6 +50,11 @@ const Result = () => {
 		if (userName && !dataLoaded) getData();
 	}, [userName, dataLoaded, navigate]);
 	
+	useEffect(() => {
+		if (!userName) navigate('../', { replace: true });
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+
 	const handleFormSubmit = (() => {
 		const errArr = []
 		const formValue = inputText.current.value;

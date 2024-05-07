@@ -21,14 +21,10 @@ Makes use of the official github rest API;
 Made primarily for practicing API consumption and REACT-JS;
 
 ***************************************
-Technologies & packages
+Stack
 ***************************************
 
 - REACT-JS;
-	- React-Hooks;
-	- React-Router;
-	- React-Icons / Font-Awesome;
-	- React-dotenv
 - GitHub REST API;
 - Axios;
 
